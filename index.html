@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>隨機顏色產生器</title>
+</head>
+<body style="text-align: center; transition: background 0.3s;">
+    <h2 style="margin-top: 50px;">🎨 點擊按鈕換顏色</h2>
+    <div style="margin: 30px;">
+        <button onclick="randomColor()" style="padding: 10px 20px; font-size: 16px;">產生隨機顏色</button>
+    </div>
+    <div id="colorCode" style="font-size: 24px; font-weight: bold; background: white; padding: 20px; display: inline-block; border-radius: 8px;"></div>
+
+    <script>
+        function randomColor() {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            let hex = '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+            
+            document.body.style.backgroundColor = hex;
+            document.getElementById('colorCode').innerHTML = hex;
+        }
+    </script>
+    <p style="margin-top: 50px;"><i>pollinations.ai 開發積分範例</i></p>
+</body>
+</html>
